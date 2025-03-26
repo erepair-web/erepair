@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import BookRepair from "./pages/BookRepair";
 import DIYKits from "./pages/DIYKits";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 // Create placeholder pages for the routes we haven't fully implemented yet
@@ -22,7 +23,6 @@ const PlaceholderPage = ({ title }: { title: string }) => (
 const Recycling = () => <PlaceholderPage title="E-Waste Recycling" />;
 const ForBusiness = () => <PlaceholderPage title="For Business" />;
 const Franchise = () => <PlaceholderPage title="Franchise Opportunities" />;
-const About = () => <PlaceholderPage title="About Us" />;
 const Blog = () => <PlaceholderPage title="Blog" />;
 const Contact = () => <PlaceholderPage title="Contact Us" />;
 const DownloadApp = () => <PlaceholderPage title="Download Our App" />;
