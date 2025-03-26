@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import BookRepair from "./pages/BookRepair";
 import DIYKits from "./pages/DIYKits";
 import About from "./pages/About";
+import Recycling from "./pages/Recycling";
 import NotFound from "./pages/NotFound";
 
 // Create placeholder pages for the routes we haven't fully implemented yet
@@ -20,7 +21,6 @@ const PlaceholderPage = ({ title }: { title: string }) => (
   </div>
 );
 
-const Recycling = () => <PlaceholderPage title="E-Waste Recycling" />;
 const ForBusiness = () => <PlaceholderPage title="For Business" />;
 const Franchise = () => <PlaceholderPage title="Franchise Opportunities" />;
 const Blog = () => <PlaceholderPage title="Blog" />;
