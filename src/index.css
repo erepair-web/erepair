@@ -1,84 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 145 43% 97%;
+    --foreground: 210 34% 23%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 34% 23%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 34% 23%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 145 68% 49%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 204 70% 53%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 145 43% 92%;
+    --muted-foreground: 210 34% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 145 43% 92%;
+    --accent-foreground: 210 34% 23%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 145 43% 90%;
+    --input: 145 43% 90%;
+    --ring: 145 68% 49%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 34% 13%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 34% 13%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 34% 13%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 145 68% 49%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 204 70% 53%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 34% 23%;
+    --muted-foreground: 217.9 10.6% 64.9%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 34% 23%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 210 34% 23%;
+    --input: 210 34% 23%;
+    --ring: 145 68% 49%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -95,7 +92,68 @@
     @apply border-border;
   }
 
+  html, body {
+    @apply scroll-smooth antialiased;
+    font-family: 'Montserrat', sans-serif;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-md border border-white/30 shadow-lg;
+  }
+
+  .section-container {
+    @apply container mx-auto px-4 py-12 md:py-20;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #E8F5E9 0%, rgba(52, 152, 219, 0.1) 100%);
+  }
+
+  .btn-primary {
+    @apply bg-erepair-green text-white hover:bg-erepair-green/90 focus:ring-2 focus:ring-erepair-green/50 transition-all;
+  }
+
+  .btn-secondary {
+    @apply bg-erepair-blue text-white hover:bg-erepair-blue/90 focus:ring-2 focus:ring-erepair-blue/50 transition-all;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(to right, #2ECC71, #3498DB) 1;
+    border-width: 2px 0 0 0;
+    border-style: solid;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-erepair-green to-erepair-blue bg-clip-text text-transparent;
+  }
+
+  .nav-link {
+    @apply relative py-2 px-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-erepair-green after:transition-all after:duration-300;
+  }
+
+  .nav-link.active {
+    @apply after:w-full;
+  }
+
+  .fade-in-view {
+    @apply opacity-0 translate-y-5;
+    animation: fadeInView 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInView {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
