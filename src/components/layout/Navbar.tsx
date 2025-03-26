@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, WrenchIcon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -51,13 +51,12 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-md bg-gradient-to-tr from-erepair-green to-erepair-blue flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110">
-            <WrenchIcon className="h-6 w-6" />
-          </div>
-          <div>
-            <h1 className="text-xl font-bold">eRepair</h1>
-            <p className="text-xs italic text-muted-foreground">Hum Sab Theek Kardenge!</p>
-          </div>
+          <img 
+            src="/lovable-uploads/d994f3ee-eee5-4604-9502-3352b02031a8.png" 
+            alt="eRepair Logo" 
+            className="h-10 transition-transform duration-300 group-hover:scale-105"
+          />
+          <p className="text-xs italic text-muted-foreground">Hum Sab Theek Kardenge!</p>
         </Link>
 
         {/* Desktop Navigation */}

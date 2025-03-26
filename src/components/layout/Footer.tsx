@@ -8,8 +8,7 @@ import {
   Youtube,
   PhoneCall,
   Mail,
-  MapPin,
-  WrenchIcon
+  MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,13 +21,11 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-md bg-gradient-to-tr from-erepair-green to-erepair-blue flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <WrenchIcon className="h-6 w-6" />
-              </div>
-              <div>
-                <h2 className="text-xl font-bold">eRepair</h2>
-                <p className="text-xs italic opacity-80">Hum Sab Theek Kardenge!</p>
-              </div>
+              <img 
+                src="/lovable-uploads/d994f3ee-eee5-4604-9502-3352b02031a8.png" 
+                alt="eRepair Logo" 
+                className="h-12 transition-transform duration-300 group-hover:scale-105" 
+              />
             </Link>
             <p className="text-sm opacity-80">
               India's first AI-powered electronics repair platform, launching in 2025. 
