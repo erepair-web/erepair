@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/common/PageHeader";
@@ -22,8 +21,8 @@ const formSchema = z.object({
   deviceType: z.string().min(1, { message: "Please select a device type." }),
   issueDescription: z.string().min(10, { message: "Please describe the issue in detail." }),
   preferredDate: z.string().min(1, { message: "Please select a preferred date." }),
-  termsAccepted: z.literal(true, {
-    errorMap: () => ({ message: "You must accept the terms and conditions" }),
+  termsAccepted: z.boolean().refine(val => val === true, {
+    message: "You must accept the terms and conditions",
   }),
 });
 
