@@ -2,7 +2,7 @@
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
-import { Smartphone, Shield, Zap, Clock, Tool, Recycle } from "lucide-react";
+import { Smartphone, Shield, Zap, Clock, Wrench, Recycle } from "lucide-react";
 
 const DownloadApp = () => {
   return (
@@ -45,7 +45,7 @@ const DownloadApp = () => {
                     description: "Track your repair status in real-time and receive notifications at each step."
                   },
                   {
-                    icon: Tool,
+                    icon: Wrench,
                     title: "DIY Guides",
                     description: "Access step-by-step repair guides and video tutorials for simple fixes."
                   },
