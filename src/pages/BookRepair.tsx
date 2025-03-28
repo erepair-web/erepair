@@ -4,7 +4,8 @@ import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { FixBotDialog } from "@/components/chat/FixBotDialog";
+import { QuickRepairForm } from "@/components/repair/QuickRepairForm";
 import { useToast } from "@/hooks/use-toast";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -12,6 +13,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { MessageSquare, Smartphone, Laptop, Tablet, Tv, Speaker, Clock, Check, CalendarDays, Wrench, Truck, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
@@ -28,7 +30,10 @@ const formSchema = z.object({
 
 const BookRepair = () => {
   const [selectedDevice, setSelectedDevice] = useState("");
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [showQuickForm, setShowQuickForm] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -57,6 +62,20 @@ const BookRepair = () => {
     });
     form.reset();
     setSelectedDevice("");
+  };
+
+  const handleBookFromChat = () => {
+    setIsChatOpen(false);
+    setShowQuickForm(true);
+    
+    setTimeout(() => {
+      document.getElementById("quick-repair-form")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
+  const handleSellDeviceFromChat = () => {
+    setIsChatOpen(false);
+    navigate("/recycling#trade-in");
   };
 
   const repairProcess = [
@@ -125,42 +144,24 @@ const BookRepair = () => {
                     <h3 className="font-medium mb-2">AI Chatbot Diagnostics</h3>
                     <p className="text-sm text-muted-foreground">
                       Describe your device issues to our AI and get an instant preliminary diagnosis
-                      and repair estimate.
+                      and repair estimate. Our FixBot supports multiple languages and voice input!
                     </p>
                   </div>
                 </div>
               </div>
               
               <div className="space-y-4">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button className="btn-primary w-full">Start AI Diagnostics</Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-[425px]">
-                    <DialogHeader>
-                      <DialogTitle>Chat with FixBot</DialogTitle>
-                    </DialogHeader>
-                    <div className="max-h-[300px] overflow-y-auto border rounded-md p-4 mb-4">
-                      <div className="flex flex-col gap-4">
-                        <div className="bg-muted p-3 rounded-lg rounded-tl-none max-w-[80%] self-start">
-                          <p className="text-sm">Hi there! I'm FixBot. How can I help with your device today?</p>
-                        </div>
-                        <div className="bg-erepair-green/10 p-3 rounded-lg rounded-tr-none max-w-[80%] self-end">
-                          <p className="text-sm">My phone screen is cracked</p>
-                        </div>
-                        <div className="bg-muted p-3 rounded-lg rounded-tl-none max-w-[80%] self-start">
-                          <p className="text-sm">I'm sorry to hear about your cracked screen. Based on your description, you'll need a screen replacement. Depending on your phone model, this typically costs ₹1,200 - ₹3,500. Would you like to book a repair appointment?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex gap-2">
-                      <Input placeholder="Type your message..." className="flex-grow" />
-                      <Button>Send</Button>
-                    </div>
-                  </DialogContent>
-                </Dialog>
+                <Button className="btn-primary w-full" onClick={() => setIsChatOpen(true)}>
+                  Start AI Diagnostics
+                </Button>
                 <Button variant="outline" className="w-full">Schedule a Technician Visit</Button>
               </div>
+              
+              {showQuickForm && (
+                <div id="quick-repair-form" className="mt-8">
+                  <QuickRepairForm />
+                </div>
+              )}
             </div>
             
             <div className="glass-card rounded-xl p-8 animate-slide-in-bottom" style={{ animationDelay: "0.2s" }}>
@@ -211,7 +212,6 @@ const BookRepair = () => {
         </div>
       </section>
 
-      {/* Common Issues & Pricing */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Common Issues & Pricing</h2>
@@ -243,7 +243,6 @@ const BookRepair = () => {
         </div>
       </section>
 
-      {/* Repair Process */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4">Our Repair Process</h2>
@@ -266,7 +265,6 @@ const BookRepair = () => {
         </div>
       </section>
 
-      {/* Booking Form */}
       <section className="py-16 bg-erepair-light-green">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4">Book Your Repair</h2>
@@ -400,6 +398,13 @@ const BookRepair = () => {
           </div>
         </div>
       </section>
+
+      <FixBotDialog 
+        open={isChatOpen} 
+        onOpenChange={setIsChatOpen}
+        onBookRepair={handleBookFromChat}
+        onSellDevice={handleSellDeviceFromChat}
+      />
     </Layout>
   );
 };
