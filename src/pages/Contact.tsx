@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
@@ -66,20 +65,20 @@ const Contact = () => {
                   {
                     icon: Phone,
                     title: "Phone",
-                    details: "+91 1234 567 890",
+                    details: "+91 8999895516",
                     subdetails: "Mon-Sat, 9am-6pm IST"
                   },
                   {
                     icon: Mail,
                     title: "Email",
-                    details: "contact@erepair.in",
+                    details: "mail.erepair@gmail.com",
                     subdetails: "We'll respond within 24 hours"
                   },
                   {
                     icon: MapPin,
                     title: "Office",
-                    details: "123 Tech Park, Electronic City",
-                    subdetails: "Bengaluru, Karnataka 560100"
+                    details: "1154 Prime Arcade, Shop No-5B, Ground Floor",
+                    subdetails: "Saifee Street, Behind MG Road, Camp, Pune - 411001"
                   },
                   {
                     icon: Clock,
@@ -239,8 +238,8 @@ const Contact = () => {
                 <div className="flex items-start gap-3 mb-4 md:mb-0">
                   <MapPin className="h-5 w-5 text-erepair-green mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-medium">eRepair Technologies Pvt. Ltd.</h3>
-                    <p className="text-muted-foreground">123 Tech Park, Electronic City, Bengaluru, Karnataka 560100</p>
+                    <h3 className="font-medium">eRepair Technologies</h3>
+                    <p className="text-muted-foreground">1154 Prime Arcade, Shop No-5B, Ground Floor, Saifee Street, Behind MG Road, Camp, Pune - 411001</p>
                   </div>
                 </div>
                 

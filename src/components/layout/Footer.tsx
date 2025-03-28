@@ -84,18 +84,20 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <PhoneCall size={18} className="text-erepair-green mt-1 flex-shrink-0" />
-                <span className="text-sm opacity-80">+91 1234 567 890</span>
+                <span className="text-sm opacity-80">+91 8999895516</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-erepair-green mt-1 flex-shrink-0" />
-                <span className="text-sm opacity-80">contact@erepair.in</span>
+                <span className="text-sm opacity-80">mail.erepair@gmail.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-erepair-green mt-1 flex-shrink-0" />
                 <span className="text-sm opacity-80">
-                  eRepair Technologies Pvt. Ltd.<br />
-                  123 Tech Park, Electronic City<br />
-                  Bengaluru, Karnataka 560100
+                  eRepair Technologies<br />
+                  1154 Prime Arcade, Shop No-5B<br />
+                  Ground Floor, Saifee Street<br />
+                  Behind MG Road, Camp<br />
+                  Pune - 411001
                 </span>
               </li>
             </ul>
@@ -117,7 +119,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm opacity-70">
-          <p>© {new Date().getFullYear()} eRepair Technologies Pvt. Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} eRepair Technologies. All rights reserved.</p>
           <div className="flex justify-center space-x-6 mt-2">
             <Link to="/privacy" className="hover:text-erepair-green transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-erepair-green transition-colors">Terms of Service</Link>
