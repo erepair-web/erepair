@@ -12,6 +12,7 @@ import Recycling from "./pages/Recycling";
 import ForBusiness from "./pages/ForBusiness";
 import NotFound from "./pages/NotFound";
 import DownloadApp from "./pages/DownloadApp";
+import Blog from "./pages/Blog";
 
 // Create placeholder pages for the routes we haven't fully implemented yet
 const PlaceholderPage = ({ title }: { title: string }) => (
@@ -24,7 +25,6 @@ const PlaceholderPage = ({ title }: { title: string }) => (
 );
 
 const Franchise = () => <PlaceholderPage title="Franchise Opportunities" />;
-const Blog = () => <PlaceholderPage title="Blog" />;
 const Contact = () => <PlaceholderPage title="Contact Us" />;
 const Privacy = () => <PlaceholderPage title="Privacy Policy" />;
 const Terms = () => <PlaceholderPage title="Terms of Service" />;
