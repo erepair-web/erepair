@@ -15,7 +15,8 @@ export default function Layout({ children }: LayoutProps) {
       <main className="flex-grow pt-20">{children}</main>
       <Footer />
       <FixBotWidget />
-      <style jsx global>{`
+      <style>
+        {`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }
           to { opacity: 1; transform: translateY(0); }
@@ -23,7 +24,8 @@ export default function Layout({ children }: LayoutProps) {
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out forwards;
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 }
