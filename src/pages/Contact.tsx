@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
@@ -238,7 +239,7 @@ const Contact = () => {
                 <div className="flex items-start gap-3 mb-4 md:mb-0">
                   <MapPin className="h-5 w-5 text-erepair-green mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-medium">eRepair Technologies</h3>
+                    <h3 className="font-medium">eRepair (formerly Electrotech Informatics)</h3>
                     <p className="text-muted-foreground">1154 Prime Arcade, Shop No-5B, Ground Floor, Saifee Street, Behind MG Road, Camp, Pune - 411001</p>
                   </div>
                 </div>

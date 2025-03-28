@@ -93,7 +93,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-erepair-green mt-1 flex-shrink-0" />
                 <span className="text-sm opacity-80">
-                  eRepair Technologies<br />
+                  eRepair (formerly Electrotech Informatics)<br />
                   1154 Prime Arcade, Shop No-5B<br />
                   Ground Floor, Saifee Street<br />
                   Behind MG Road, Camp<br />
@@ -119,7 +119,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm opacity-70">
-          <p>© {new Date().getFullYear()} eRepair Technologies. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} eRepair (formerly Electrotech Informatics). All rights reserved.</p>
           <div className="flex justify-center space-x-6 mt-2">
             <Link to="/privacy" className="hover:text-erepair-green transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-erepair-green transition-colors">Terms of Service</Link>
