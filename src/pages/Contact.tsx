@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare, ExternalLink } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(3, { message: "Name must be at least 3 characters." }),
@@ -221,17 +220,23 @@ const Contact = () => {
         </div>
       </section>
       
-      {/* Map Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Visit Our Office</h2>
           
           <div className="bg-white rounded-xl shadow-md overflow-hidden">
-            <div className="aspect-[16/9] bg-gray-200">
-              {/* This would be a Google Map iframe */}
-              <div className="w-full h-full flex items-center justify-center">
-                <p className="text-muted-foreground">Map would be displayed here</p>
-              </div>
+            <div className="aspect-[16/9] overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.287170787367!2d73.87693277595728!3d18.518310067738485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c12a4c70e99b%3A0x2b0d1e261bc15a86!2seRepair%20(%20Formerly%20Electrotech%20Informatics%20)!5e0!3m2!1sen!2sin!4v1714474848232!5m2!1sen!2sin"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="eRepair Location Map"
+                className="w-full"
+              ></iframe>
             </div>
             
             <div className="p-6">
@@ -244,14 +249,20 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <Button variant="outline">Get Directions</Button>
+                <Button 
+                  variant="outline" 
+                  className="gap-2"
+                  onClick={() => window.open("https://maps.app.goo.gl/KR61Qg6dJKHG1AXw8", "_blank")}
+                >
+                  <ExternalLink size={16} />
+                  Get Directions
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
       
-      {/* FAQ Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

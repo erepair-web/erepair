@@ -8,7 +8,8 @@ import {
   Youtube,
   PhoneCall,
   Mail,
-  MapPin
+  MapPin,
+  ExternalLink
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -78,7 +79,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info with Map Preview */}
           <div>
             <h3 className="text-lg font-bold mb-4 border-b border-erepair-blue pb-2">Contact Us</h3>
             <ul className="space-y-4">
@@ -101,6 +102,25 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
+            <div className="mt-4 rounded-lg overflow-hidden relative group">
+              <a 
+                href="https://maps.app.goo.gl/KR61Qg6dJKHG1AXw8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block relative"
+              >
+                <img 
+                  src="https://maps.googleapis.com/maps/api/staticmap?center=eRepair+Electrotech+Informatics+Camp+Pune&zoom=15&size=400x200&markers=color:green|label:E|eRepair+Electrotech+Informatics+Camp+Pune&key=AIzaSyD_RdUhMYOVxYivNjvfYDSo8gNZ-BI7wnA" 
+                  alt="Map to eRepair location" 
+                  className="w-full object-cover h-[120px] transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center transition-all duration-300">
+                  <span className="text-transparent group-hover:text-white transition-all duration-300 flex items-center">
+                    <ExternalLink size={16} className="mr-1" /> View on Google Maps
+                  </span>
+                </div>
+              </a>
+            </div>
           </div>
 
           {/* Newsletter */}
