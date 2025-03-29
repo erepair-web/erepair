@@ -15,20 +15,9 @@ import DownloadApp from "./pages/DownloadApp";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Franchise from "./pages/Franchise";
-
-// Create placeholder pages for the routes we haven't fully implemented yet
-const PlaceholderPage = ({ title }: { title: string }) => (
-  <div className="min-h-screen flex items-center justify-center bg-background">
-    <div className="text-center">
-      <h1 className="text-4xl font-bold mb-4">{title}</h1>
-      <p className="text-xl text-muted-foreground">This page is coming soon!</p>
-    </div>
-  </div>
-);
-
-const Privacy = () => <PlaceholderPage title="Privacy Policy" />;
-const Terms = () => <PlaceholderPage title="Terms of Service" />;
-const Sitemap = () => <PlaceholderPage title="Sitemap" />;
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Sitemap from "./pages/Sitemap";
 
 const queryClient = new QueryClient();
 
