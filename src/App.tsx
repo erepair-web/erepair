@@ -13,6 +13,8 @@ import ForBusiness from "./pages/ForBusiness";
 import NotFound from "./pages/NotFound";
 import DownloadApp from "./pages/DownloadApp";
 import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import Franchise from "./pages/Franchise";
 
 // Create placeholder pages for the routes we haven't fully implemented yet
 const PlaceholderPage = ({ title }: { title: string }) => (
@@ -24,8 +26,6 @@ const PlaceholderPage = ({ title }: { title: string }) => (
   </div>
 );
 
-const Franchise = () => <PlaceholderPage title="Franchise Opportunities" />;
-const Contact = () => <PlaceholderPage title="Contact Us" />;
 const Privacy = () => <PlaceholderPage title="Privacy Policy" />;
 const Terms = () => <PlaceholderPage title="Terms of Service" />;
 const Sitemap = () => <PlaceholderPage title="Sitemap" />;
