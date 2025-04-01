@@ -7,110 +7,93 @@ const Privacy = () => {
     <Layout>
       <PageHeader
         title="Privacy Policy"
-        subtitle="How we collect, use, and protect your personal information"
-        backgroundImage="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?auto=format&fit=crop&q=80&w=1600&ixlib=rb-4.0.3"
+        subtitle="How we collect, use, and protect your information"
+        backgroundImage="https://images.unsplash.com/photo-1569396116180-210c182bedb8?q=80&w=2069&auto=format&fit=crop"
       />
       
       <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-sm p-8">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-sm text-muted-foreground">Last updated: May 1, 2023</p>
-              
-              <p className="mt-6">
-                At eRepair, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our mobile application, or use our repair services.
-              </p>
-              
-              <h2>Information We Collect</h2>
-              <p>
-                We collect information that you provide directly to us, information we collect automatically when you use our services, and information from third parties.
-              </p>
-              
-              <h3>Information You Provide to Us</h3>
-              <ul>
-                <li>Personal identification information (name, email address, phone number, etc.)</li>
-                <li>Billing information (billing address, payment details, etc.)</li>
-                <li>Device information (device type, model, serial number, etc.)</li>
-                <li>Content of communications with us</li>
-                <li>Any other information you choose to provide</li>
-              </ul>
-              
-              <h3>Information We Collect Automatically</h3>
-              <ul>
-                <li>Log information (IP address, browser type, pages visited, time spent, etc.)</li>
-                <li>Device information (hardware model, operating system, unique device identifiers, etc.)</li>
-                <li>Location information (with your consent)</li>
-                <li>Cookies and similar technologies</li>
-              </ul>
-              
-              <h2>How We Use Your Information</h2>
-              <p>
-                We use the information we collect to:
-              </p>
-              <ul>
-                <li>Provide, maintain, and improve our services</li>
-                <li>Process transactions and send related information</li>
-                <li>Send technical notices, updates, security alerts, and support messages</li>
-                <li>Respond to your comments, questions, and customer service requests</li>
-                <li>Communicate with you about products, services, offers, and events</li>
-                <li>Monitor and analyze trends, usage, and activities</li>
-                <li>Detect, prevent, and address fraud and other illegal activities</li>
-                <li>Comply with legal obligations</li>
-              </ul>
-              
-              <h2>How We Share Your Information</h2>
-              <p>
-                We may share your information with:
-              </p>
-              <ul>
-                <li>Service providers who perform services on our behalf</li>
-                <li>Business partners with your consent</li>
-                <li>In response to legal process or government requests</li>
-                <li>To protect our rights, privacy, safety, or property</li>
-                <li>In connection with a merger, sale, or acquisition</li>
-              </ul>
-              
-              <h2>Your Choices</h2>
-              <p>
-                You have several choices regarding the information we collect and how it's used:
-              </p>
-              <ul>
-                <li>Account Information: You can update your account information by logging into your account</li>
-                <li>Cookies: You can manage cookie preferences through your browser settings</li>
-                <li>Marketing Communications: You can opt out of marketing emails by following the unsubscribe instructions</li>
-                <li>Mobile Push Notifications: You can manage push notifications in your device settings</li>
-              </ul>
-              
-              <h2>Data Security</h2>
-              <p>
-                We implement appropriate security measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure, so we cannot guarantee absolute security.
-              </p>
-              
-              <h2>Data Retention</h2>
-              <p>
-                We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.
-              </p>
-              
-              <h2>Children's Privacy</h2>
-              <p>
-                Our services are not directed to children under 13, and we do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe we have collected information from your child, please contact us.
-              </p>
-              
-              <h2>Changes to This Privacy Policy</h2>
-              <p>
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
-              </p>
-              
-              <h2>Contact Us</h2>
-              <p>
-                If you have any questions about this Privacy Policy, please contact us at:
-              </p>
-              <p>
-                <strong>Email:</strong> privacy@erepair.in<br />
-                <strong>Phone:</strong> +91 1234 567 890<br />
-                <strong>Address:</strong> 123 Tech Park, Electronic City, Bengaluru, Karnataka 560100
-              </p>
-            </div>
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="prose prose-lg max-w-none">
+            <h2>Privacy Policy for eRepair</h2>
+            <p><strong>Last Updated: {new Date().toLocaleDateString()}</strong></p>
+            
+            <p>
+              Thank you for choosing eRepair ("we," "us," or "our"). We are committed to protecting your personal 
+              information and your right to privacy. This Privacy Policy explains how we collect, use, and share 
+              information about you when you use our services, website, and mobile application.
+            </p>
+            
+            <h3>Information We Collect</h3>
+            <p>We may collect the following types of information:</p>
+            <ul>
+              <li><strong>Personal Information:</strong> Name, email address, phone number, address, and payment details when you book a repair or register for an account.</li>
+              <li><strong>Device Information:</strong> Information about the electronic devices you bring for repair, including make, model, serial number, and issues reported.</li>
+              <li><strong>Usage Information:</strong> How you interact with our website, app, and services, including IP address, browser type, pages visited, and time spent.</li>
+              <li><strong>Location Information:</strong> With your permission, we may collect precise location data to provide location-based services.</li>
+            </ul>
+            
+            <h3>How We Use Your Information</h3>
+            <p>We use the information we collect to:</p>
+            <ul>
+              <li>Provide, maintain, and improve our services</li>
+              <li>Process transactions and send related information</li>
+              <li>Send you technical notices, updates, and support messages</li>
+              <li>Respond to your comments, questions, and customer service requests</li>
+              <li>Develop new products and services</li>
+              <li>Monitor and analyze trends, usage, and activities</li>
+              <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+              <li>Personalize your experience and provide content and features relevant to your interests</li>
+            </ul>
+            
+            <h3>Information Sharing and Disclosure</h3>
+            <p>We may share your information with:</p>
+            <ul>
+              <li><strong>Service Providers:</strong> Companies that perform services on our behalf, such as payment processing, data analysis, email delivery, and customer service.</li>
+              <li><strong>Business Partners:</strong> Trusted third parties who help us provide our services, such as parts suppliers or specialized repair technicians.</li>
+              <li><strong>Legal Requirements:</strong> When required by law or to protect our rights, privacy, safety, or property.</li>
+            </ul>
+            
+            <h3>Your Rights and Choices</h3>
+            <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+            <ul>
+              <li>Accessing, correcting, or deleting your personal information</li>
+              <li>Withdrawing your consent at any time</li>
+              <li>Requesting restriction of processing of your personal information</li>
+              <li>Receiving a copy of your personal information in a structured, machine-readable format</li>
+              <li>Opting out of marketing communications</li>
+            </ul>
+            
+            <h3>Data Security</h3>
+            <p>
+              We implement appropriate technical and organizational measures to protect your personal information 
+              from unauthorized access, use, disclosure, alteration, or destruction.
+            </p>
+            
+            <h3>Data Retention</h3>
+            <p>
+              We retain personal information for as long as necessary to fulfill the purposes outlined in this 
+              Privacy Policy unless a longer retention period is required or permitted by law.
+            </p>
+            
+            <h3>Children's Privacy</h3>
+            <p>
+              Our services are not intended for individuals under the age of 18. We do not knowingly collect 
+              personal information from children under 18.
+            </p>
+            
+            <h3>Changes to This Privacy Policy</h3>
+            <p>
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting 
+              the new Privacy Policy on this page and updating the "Last Updated" date.
+            </p>
+            
+            <h3>Contact Us</h3>
+            <p>
+              If you have any questions about this Privacy Policy, please contact us at:<br />
+              Email: mail.erepair@gmail.com<br />
+              Phone: +91 8999895516<br />
+              Address: 1154 Prime Arcade, Shop No-5B, Ground Floor, Saifee Street, Behind MG Road, Camp, Pune - 411001
+            </p>
           </div>
         </div>
       </section>

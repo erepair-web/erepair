@@ -18,6 +18,7 @@ import Franchise from "./pages/Franchise";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Sitemap from "./pages/Sitemap";
+import { FixBotWidget } from "./components/chat/FixBotWidget";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/sitemap" element={<Sitemap />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FixBotWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
