@@ -72,14 +72,14 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - updated size */}
         <Link to="/" className="flex items-center gap-2 group">
           <img 
             src="/lovable-uploads/d994f3ee-eee5-4604-9502-3352b02031a8.png" 
             alt="eRepair Logo" 
-            className="h-10 transition-transform duration-300 group-hover:scale-105"
+            className="h-14 transition-transform duration-300 group-hover:scale-105"
           />
-          <p className="text-xs italic text-muted-foreground">Hum Sab Theek Kardenge!</p>
+          <p className="text-sm italic text-muted-foreground">Hum Sab Theek Kardenge!</p>
         </Link>
 
         {/* Desktop Navigation */}
