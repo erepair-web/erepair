@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { FixBotWidget } from "@/components/chat/FixBotWidget";
+import { WhatsAppWidget } from "@/components/common/WhatsAppWidget";
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ export default function Layout({ children }: LayoutProps) {
       <main className="flex-grow pt-20">{children}</main>
       <Footer />
       <FixBotWidget />
+      <WhatsAppWidget />
       <style>
         {`
         @keyframes fadeIn {
