@@ -33,19 +33,19 @@ export default function Footer() {
               We're reimagining repair services with cutting-edge technology and a commitment to sustainability.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-erepair-green transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/erepair" target="_blank" rel="noopener noreferrer" className="hover:text-[#1877F2] transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="hover:text-erepair-green transition-colors" aria-label="Twitter">
+              <a href="https://www.twitter.com/erepair" target="_blank" rel="noopener noreferrer" className="hover:text-[#1DA1F2] transition-colors" aria-label="Twitter">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="hover:text-erepair-green transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/erepair" target="_blank" rel="noopener noreferrer" className="hover:text-[#E4405F] transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="hover:text-erepair-green transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/erepair" target="_blank" rel="noopener noreferrer" className="hover:text-[#0A66C2] transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="hover:text-erepair-green transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/channel/erepair" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF0000] transition-colors" aria-label="YouTube">
                 <Youtube size={20} />
               </a>
             </div>

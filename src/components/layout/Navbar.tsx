@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -38,6 +38,14 @@ const navLinks = [
     ]
   },
   { name: "Contact", path: "/contact" },
+];
+
+const socialLinks = [
+  { icon: Facebook, href: "https://www.facebook.com/erepair", color: "#1877F2", label: "Facebook" },
+  { icon: Twitter, href: "https://www.twitter.com/erepair", color: "#1DA1F2", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/erepair", color: "#E4405F", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/erepair", color: "#0A66C2", label: "LinkedIn" },
+  { icon: Youtube, href: "https://www.youtube.com/channel/erepair", color: "#FF0000", label: "YouTube" },
 ];
 
 export default function Navbar() {
@@ -136,6 +144,23 @@ export default function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
+        {/* Social Media Links - Desktop */}
+        <div className="hidden lg:flex items-center space-x-2 mr-4">
+          {socialLinks.map((social, index) => (
+            <a 
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
+              aria-label={social.label}
+              style={{ color: social.color }}
+            >
+              <social.icon size={18} />
+            </a>
+          ))}
+        </div>
+
         {/* CTA Button - visible on desktop */}
         <div className="hidden lg:block">
           <Link to="/download-app">
@@ -202,6 +227,24 @@ export default function Navbar() {
               </Link>
             );
           })}
+          
+          {/* Social Media Icons - Mobile */}
+          <div className="flex justify-center space-x-4 py-4">
+            {socialLinks.map((social, index) => (
+              <a 
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                aria-label={social.label}
+                style={{ color: social.color }}
+              >
+                <social.icon size={20} />
+              </a>
+            ))}
+          </div>
+          
           <Link to="/download-app" className="mt-4">
             <Button className="btn-primary w-full">
               Download App
