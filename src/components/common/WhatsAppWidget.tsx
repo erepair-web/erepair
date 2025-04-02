@@ -1,9 +1,11 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { PhoneCall, MessageSquare, MapPin } from "lucide-react";
 
 export function WhatsAppWidget() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   
   // Show widget after a short delay
   useEffect(() => {
@@ -18,12 +20,59 @@ export function WhatsAppWidget() {
     window.open(`https://wa.me/918999895516`, '_blank');
   };
 
+  const openCall = () => {
+    window.open(`tel:+918999895516`, '_blank');
+  };
+
+  const openMaps = () => {
+    window.open(`https://g.co/kgs/bgMHfDh`, '_blank');
+  };
+
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 animate-fadeIn">
+    <div className="fixed bottom-6 left-6 z-50 animate-fadeIn flex flex-col gap-2 items-start">
+      {isExpanded && (
+        <div className="bg-white rounded-lg shadow-lg p-3 animate-fadeIn mb-2">
+          <div className="flex flex-col space-y-2">
+            <h3 className="font-medium text-sm">eRepair – Electronics & Appliance Repair</h3>
+            <div className="text-xs text-muted-foreground flex items-center gap-1">
+              <MapPin size={12} /> Pune, Maharashtra
+            </div>
+            <div className="flex space-x-2 mt-2">
+              <Button 
+                onClick={openCall} 
+                size="sm" 
+                variant="outline" 
+                className="flex items-center gap-1 text-xs h-8 px-2"
+              >
+                <PhoneCall size={14} />
+                Call
+              </Button>
+              <Button 
+                onClick={openMaps} 
+                size="sm" 
+                variant="outline" 
+                className="flex items-center gap-1 text-xs h-8 px-2"
+              >
+                <MapPin size={14} />
+                Directions
+              </Button>
+              <Button 
+                onClick={openWhatsApp} 
+                size="sm" 
+                className="flex items-center gap-1 text-xs h-8 px-2 bg-[#25D366] hover:bg-[#128C7E]"
+              >
+                <MessageSquare size={14} />
+                Chat
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <Button 
-        onClick={openWhatsApp}
+        onClick={() => setIsExpanded(!isExpanded)}
         className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#128C7E] shadow-lg flex items-center justify-center p-0 border-none relative overflow-hidden group"
         aria-label="Chat on WhatsApp"
       >
@@ -32,7 +81,7 @@ export function WhatsAppWidget() {
         </svg>
         
         <div className="absolute opacity-0 bg-white text-black font-medium px-3 py-1 rounded-lg -top-10 left-1/2 transform -translate-x-1/2 group-hover:opacity-100 transition-opacity whitespace-nowrap text-sm pointer-events-none">
-          Chat with us
+          {isExpanded ? "Close" : "Contact Us"}
           <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rotate-45"></div>
         </div>
       </Button>
